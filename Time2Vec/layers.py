@@ -22,26 +22,30 @@ class Time2Vec(Layer):
         self.wb = self.add_weight(
             shape=(1, 1),
             initializer='uniform',
-            trainable=True
+            trainable=True,
+            name="wb"
         )
         
         self.bb = self.add_weight(
             shape=(1, 1),
             initializer='uniform',
-            trainable=True
+            trainable=True,
+            name="bb"
         )
         
         # Else needs to pass the periodic activation
         self.wa = self.add_weight(
             shape=(1, self.k),
             initializer='uniform',
-            trainable=True
+            trainable=True,
+            name="wa"
         )
         
         self.ba = self.add_weight(
             shape=(1, self.k),
             initializer='uniform',
-            trainable=True
+            trainable=True,
+            name="ba"
         )
         
         super(Time2Vec, self).build(input_shape)
